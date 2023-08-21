@@ -1,0 +1,58 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.img-div:hover .card-img {
+    scale: 1.1;
+}
+
+
+.disabled-button:disabled {
+    background-color: #a7a7a7;
+    border: 3px solid #ddd7d7;
+}
+
+.disabled-button:disabled:hover {
+    background-color: #858585;
+    border: 3px solid #a0a0a0;
+}
+
+.disabled-button:active {
+    background-color: #e527b2;
+    border: 5px solid #e527b2;
+}
+
+
+#applyCoupon {
+    position: absolute;
+    right: 9%;
+    transform-origin: right center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.falling {
+    transform: translateY(-50%) rotate(-110deg);
+}
+
+.returning {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e527b2;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8b0b69;
+
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f9f6e2;
+
+}
