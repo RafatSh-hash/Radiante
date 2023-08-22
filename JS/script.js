@@ -18,10 +18,11 @@ fetch(apiUrl)
     productData.forEach((product) => {
       // console.log(product);
       const listItem = document.createElement("li");
+      listItem.classList.add("w-[85%]", "lg:w-[30%]");
       listItem.innerHTML = `<div class="uk-panel">
                               <div class="p-4 product-card">
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
-                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
+                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-full">
 
                                       <div class="overlay">
                                           <div class="overlay-content">
@@ -67,10 +68,11 @@ fetch(apiUrl1)
     productData.forEach((product) => {
       // console.log(product);
       const listItem1 = document.createElement("li");
+      listItem1.classList.add("w-[85%]", "lg:w-[30%]");
       listItem1.innerHTML = `<div class="uk-panel ">
                               <div class="p-4 product-card">
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
-                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
+                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full  h-full">
 
                                       <div class="overlay">
                                           <div class="overlay-content">
@@ -116,10 +118,11 @@ fetch(apiUrl2)
     productData.forEach((product) => {
       // console.log(product);
       const listItem2 = document.createElement("li");
+      listItem2.classList.add("w-[85%]", "lg:w-[30%]");
       listItem2.innerHTML = `<div class="uk-panel">
                               <div class="p-4 product-card">
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
-                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
+                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full  h-full">
 
                                       <div class="overlay">
                                           <div class="overlay-content">
@@ -165,10 +168,11 @@ fetch(apiUrl3)
     productData.forEach((product) => {
       // console.log(product);
       const listItem3 = document.createElement("li");
+      listItem3.classList.add("w-[85%]", "lg:w-[30%]");
       listItem3.innerHTML = `<div class="uk-panel">
                               <div class="p-4 product-card" >
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
-                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
+                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full  h-full">
 
                                       <div class="overlay">
                                           <div class="overlay-content">
