@@ -209,7 +209,7 @@ fetch(apiUrl3)
 let totalPrice = 0;
 
 function buttonTask() {
-  if (totalPrice < 200) {
+  if (totalPrice < 800) {
     applyButton.disabled = true;
   } else {
     applyButton.disabled = false;

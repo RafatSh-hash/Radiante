@@ -1,7 +1,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: black;
+
 }
+
 
 .img-div:hover .card-img {
     scale: 1.1;
