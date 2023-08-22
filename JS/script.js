@@ -19,7 +19,7 @@ fetch(apiUrl)
       // console.log(product);
       const listItem = document.createElement("li");
       listItem.innerHTML = `<div class="uk-panel">
-                              <div class="p-4">
+                              <div class="p-4 product-card">
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
                                       <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
 
@@ -34,7 +34,7 @@ fetch(apiUrl)
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold">TK- <span class="price">${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -67,8 +67,8 @@ fetch(apiUrl1)
     productData.forEach((product) => {
       // console.log(product);
       const listItem1 = document.createElement("li");
-      listItem1.innerHTML = `<div class="uk-panel">
-                              <div class="p-4">
+      listItem1.innerHTML = `<div class="uk-panel ">
+                              <div class="p-4 product-card">
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
                                       <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
 
@@ -83,7 +83,7 @@ fetch(apiUrl1)
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold">TK- <span class="price">${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -117,7 +117,7 @@ fetch(apiUrl2)
       // console.log(product);
       const listItem2 = document.createElement("li");
       listItem2.innerHTML = `<div class="uk-panel">
-                              <div class="p-4">
+                              <div class="p-4 product-card">
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
                                       <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
 
@@ -132,7 +132,7 @@ fetch(apiUrl2)
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold">TK- <span class="price">${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -166,7 +166,7 @@ fetch(apiUrl3)
       // console.log(product);
       const listItem3 = document.createElement("li");
       listItem3.innerHTML = `<div class="uk-panel">
-                              <div class="p-4">
+                              <div class="p-4 product-card" >
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
                                       <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
 
@@ -182,7 +182,7 @@ fetch(apiUrl3)
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold">TK- <span class="price">${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -224,7 +224,37 @@ function buttonTask() {
 
 // add tocart button
 function addToCart(button) {
- console.log("clicked")
+  // console.log("clicked")
+  const productCard = button.closest(".product-card");
+
+    // Get the product title from the card
+    const titleElements = productCard.getElementsByClassName("text-xl");
+    const titleElement = titleElements[0];
+    const title = titleElement.textContent.trim();
+
+    // Get the product price from the card
+    const priceElements = productCard.getElementsByClassName("price");
+    const priceElement = priceElements[0];
+  const priceText = priceElement.textContent;
+  console.log(priceText)
+    const price = parseFloat(priceText);
+    totalPrice += price;
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+    buttonTask();
+
+    // You can use these title and price variables to add the product to the cart
+    // For now, let's just log them to the console
+    console.log("Product Title:", title);
+  console.log("Product Price:", price);
+  
+  const productTitleList = document.createElement("li");
+  productTitleList.innerText = title;
+  selectedTitlesList.appendChild(productTitleList);
+  
+    buttonTask();
+
+  
+
 }
 
 // cart calculations 
