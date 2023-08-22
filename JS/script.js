@@ -1,4 +1,5 @@
-const cards = document.querySelectorAll("card");
+
+
 const selectedTitlesList = document.getElementById("selectedTitlesList");
 const totalPriceElement = document.getElementById("totalPrice");
 const applyButton = document.getElementById("applyCoupon");
@@ -13,9 +14,9 @@ fetch(apiUrl)
   .then((response) => response.json())
   .then((data) => {
     const productData = data.products;
-    console.log(productData);
+    // console.log(productData);
     productData.forEach((product) => {
-      console.log(product);
+      // console.log(product);
       const listItem = document.createElement("li");
       listItem.innerHTML = `<div class="uk-panel">
                               <div class="p-4">
@@ -26,14 +27,14 @@ fetch(apiUrl)
                                           <div class="overlay-content">
                                              
                                               <div>
-                                                <button class="w-full toCart">Add To Cart</button>
+                                                <button class="w-full toCart" type="button" onClick="addToCart(this)">Add To Cart</button>
                                                </div>
                                           </div>
                               
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -47,7 +48,7 @@ fetch(apiUrl)
                                       </div>
                                        
                                   </div>
-                                  <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
+                                  <h4 class="uppercase text-center text-xl font-semibold mt-2 title" style="color: black;">${product.title}</h4>
                               </div> 
                             </div>`;
       topsList.appendChild(listItem);
@@ -62,9 +63,9 @@ fetch(apiUrl1)
   .then((response) => response.json())
   .then((data) => {
     const productData = data.products;
-    console.log(productData);
+    // console.log(productData);
     productData.forEach((product) => {
-      console.log(product);
+      // console.log(product);
       const listItem1 = document.createElement("li");
       listItem1.innerHTML = `<div class="uk-panel">
                               <div class="p-4">
@@ -75,14 +76,14 @@ fetch(apiUrl1)
                                           <div class="overlay-content">
                                              
                                               <div>
-                                                <button class="w-full toCart">Add To Cart</button>
+                                                <button class="w-full toCart" type="button" onClick="addToCart(this)">Add To Cart</button>
                                                </div>
                                           </div>
                               
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -96,7 +97,7 @@ fetch(apiUrl1)
                                       </div>
                                        
                                   </div>
-                                  <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
+                                  <h4 class="uppercase text-center text-xl font-semibold mt-2 title" style="color: black;">${product.title}</h4>
                               </div> 
                             </div>`;
       womensDressesList.appendChild(listItem1);
@@ -111,9 +112,9 @@ fetch(apiUrl2)
   .then((response) => response.json())
   .then((data) => {
     const productData = data.products;
-    console.log(productData);
+    // console.log(productData);
     productData.forEach((product) => {
-      console.log(product);
+      // console.log(product);
       const listItem2 = document.createElement("li");
       listItem2.innerHTML = `<div class="uk-panel">
                               <div class="p-4">
@@ -124,14 +125,14 @@ fetch(apiUrl2)
                                           <div class="overlay-content">
                                              
                                               <div>
-                                                <button class="w-full toCart">Add To Cart</button>
+                                                <button class="w-full toCart" type="button" onClick="addToCart(this)">Add To Cart</button>
                                                </div>
                                           </div>
                               
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -145,7 +146,7 @@ fetch(apiUrl2)
                                       </div>
                                        
                                   </div>
-                                  <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
+                                  <h4 class="uppercase text-center text-xl font-semibold mt-2 title" style="color: black;">${product.title}</h4>
                               </div> 
                             </div>`;
       womenBagList.appendChild(listItem2);
@@ -160,9 +161,9 @@ fetch(apiUrl3)
   .then((response) => response.json())
   .then((data) => {
     const productData = data.products;
-    console.log(productData);
+    // console.log(productData);
     productData.forEach((product) => {
-      console.log(product);
+      // console.log(product);
       const listItem3 = document.createElement("li");
       listItem3.innerHTML = `<div class="uk-panel">
                               <div class="p-4">
@@ -173,14 +174,15 @@ fetch(apiUrl3)
                                           <div class="overlay-content">
                                              
                                               <div>
-                                                <button class="w-full toCart">Add To Cart</button>
+                                                <button class="w-full toCart" type="button" onClick="addToCart(this)">Add To Cart</button>
+
                                                </div>
                                           </div>
                               
                                       </div>
                                       <div class="overlay1">
                                           <div class="overlay-content1">
-                                             <h1 class=" my-1 font-semibold">$${product.price}</h1>
+                                             <h1 class=" my-1 font-semibold price">$${product.price}</h1>
                                           </div>
                                          
                                       </div>
@@ -194,7 +196,7 @@ fetch(apiUrl3)
                                       </div>
                                        
                                   </div>
-                                  <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
+                                  <h4 class="uppercase text-center text-xl font-semibold mt-2 title" style="color: black;">${product.title}</h4>
                               </div> 
                             </div>`;
       womensJwellery.appendChild(listItem3);
@@ -220,18 +222,12 @@ function buttonTask() {
   }
 }
 
-cards.forEach((card) => {
-  card.addEventListener("click", () => {
-    const title = card.querySelector(".title").textContent;
-    const listItem = document.createElement("li");
-    listItem.textContent = title;
-    selectedTitlesList.appendChild(listItem);
-    const price = parseFloat(card.querySelector(".price").textContent);
-    totalPrice += price;
-    totalPriceElement.textContent = totalPrice.toFixed(2);
-    buttonTask();
-  });
-});
+// add tocart button
+function addToCart(button) {
+ console.log("clicked")
+}
+
+// cart calculations 
 
 applyButton.addEventListener("click", function () {
   const discountInput = document.getElementById("disCountInput");
@@ -269,51 +265,3 @@ document.getElementById("closeModal").addEventListener("click", function () {
   document.getElementById("modalContainer").classList.add("hidden");
 });
 
-// const apiUrl = "https://dummyjson.com/products/category/tops"; // Replace with your actual API URL
-// fetch(apiUrl)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     const productData = data.products;
-//     console.log(productData);
-//     productData.forEach((product) => {
-//       console.log(product);
-//       const listItem = document.createElement("li");
-//       listItem.innerHTML = `<card class="uk-panel">
-//                               <div class="p-4">
-//                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
-//                                       <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
-
-//                                       <div class="overlay">
-//                                           <div class="overlay-content">
-
-//                                               <div>
-//                                                 <button class="w-full">Add To Cart</button>
-//                                                </div>
-//                                           </div>
-
-//                                       </div>
-//                                       <div class="overlay1">
-//                                           <div class="overlay-content1">
-//                                              <h1 class=" my-1 font-semibold">$${product.price}</h1>
-//                                           </div>
-
-//                                       </div>
-//                                       <div class="overlay2 p-4">
-//                                           <div class="overlay-content2 text-left">
-//                                              <p class="mt-5 text-md">${product.description}</p>
-//                                              <p>Stock Left : ${product.stock}</p>
-//                                              <div class="flex justify-center mt-8"> <img src="${product.images[0]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[1]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[2]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[3]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"></div>
-//                                           </div>
-
-//                                       </div>
-
-//                                   </div>
-//                                   <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
-//                               </div>
-//                             </card>`;
-//       topsList.appendChild(listItem);
-//     });
-//   })
-//   .catch((error) => {
-//     console.error("Error fetching data:", error);
-//   });
