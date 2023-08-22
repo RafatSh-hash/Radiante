@@ -4,6 +4,9 @@ const totalPriceElement = document.getElementById("totalPrice");
 const applyButton = document.getElementById("applyCoupon");
 const makePurchaseButton = document.getElementById("makePurchase");
 const topsList = document.getElementById("topsList");
+const womensDressesList = document.getElementById("womensDressesList");
+const womenBagList = document.getElementById("womensBagList");
+const womensJwellery = document.getElementById("womensJwlry");
 
 const apiUrl = "https://dummyjson.com/products/category/tops"; // Replace with your actual API URL
 fetch(apiUrl)
@@ -14,7 +17,7 @@ fetch(apiUrl)
     productData.forEach((product) => {
       console.log(product);
       const listItem = document.createElement("li");
-      listItem.innerHTML = `<card class="uk-panel">
+      listItem.innerHTML = `<div class="uk-panel">
                               <div class="p-4">
                                   <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
                                       <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
@@ -23,7 +26,7 @@ fetch(apiUrl)
                                           <div class="overlay-content">
                                              
                                               <div>
-                                                <button class="w-full">Add To Cart</button>
+                                                <button class="w-full toCart">Add To Cart</button>
                                                </div>
                                           </div>
                               
@@ -36,7 +39,7 @@ fetch(apiUrl)
                                       </div>
                                       <div class="overlay2 p-4">
                                           <div class="overlay-content2 text-left">
-                                             <p class="mt-5 text-md">${product.description}</p>
+                                             <p class="mt-5 text-md">${product.description.slice(0, 90)}</p>
                                              <p>Stock Left : ${product.stock}</p>
                                              <div class="flex justify-center mt-8"> <img src="${product.images[0]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[1]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[2]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[3]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"></div>
                                           </div>
@@ -46,8 +49,155 @@ fetch(apiUrl)
                                   </div>
                                   <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
                               </div> 
-                            </card>`;
+                            </div>`;
       topsList.appendChild(listItem);
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+
+  const apiUrl1 = "https://dummyjson.com/products/category/womens-dresses"; // Replace with your actual API URL
+fetch(apiUrl1)
+  .then((response) => response.json())
+  .then((data) => {
+    const productData = data.products;
+    console.log(productData);
+    productData.forEach((product) => {
+      console.log(product);
+      const listItem1 = document.createElement("li");
+      listItem1.innerHTML = `<div class="uk-panel">
+                              <div class="p-4">
+                                  <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
+                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
+
+                                      <div class="overlay">
+                                          <div class="overlay-content">
+                                             
+                                              <div>
+                                                <button class="w-full toCart">Add To Cart</button>
+                                               </div>
+                                          </div>
+                              
+                                      </div>
+                                      <div class="overlay1">
+                                          <div class="overlay-content1">
+                                             <h1 class=" my-1 font-semibold">$${product.price}</h1>
+                                          </div>
+                                         
+                                      </div>
+                                      <div class="overlay2 p-4">
+                                          <div class="overlay-content2 text-left">
+                                             <p class="mt-5 text-md">${product.description.slice(0, 90)}</p>
+                                             <p>Stock Left : ${product.stock}</p>
+                                             <div class="flex justify-center mt-8"> <img src="${product.images[0]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[1]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[2]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[3]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"></div>
+                                          </div>
+                                         
+                                      </div>
+                                       
+                                  </div>
+                                  <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
+                              </div> 
+                            </div>`;
+      womensDressesList.appendChild(listItem1);
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+
+   const apiUrl2 = "https://dummyjson.com/products/category/womens-bags"; // Replace with your actual API URL
+fetch(apiUrl2)
+  .then((response) => response.json())
+  .then((data) => {
+    const productData = data.products;
+    console.log(productData);
+    productData.forEach((product) => {
+      console.log(product);
+      const listItem2 = document.createElement("li");
+      listItem2.innerHTML = `<div class="uk-panel">
+                              <div class="p-4">
+                                  <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
+                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
+
+                                      <div class="overlay">
+                                          <div class="overlay-content">
+                                             
+                                              <div>
+                                                <button class="w-full toCart">Add To Cart</button>
+                                               </div>
+                                          </div>
+                              
+                                      </div>
+                                      <div class="overlay1">
+                                          <div class="overlay-content1">
+                                             <h1 class=" my-1 font-semibold">$${product.price}</h1>
+                                          </div>
+                                         
+                                      </div>
+                                      <div class="overlay2 p-4">
+                                          <div class="overlay-content2 text-left">
+                                             <p class="mt-5 text-md">${product.description.slice(0, 90)}</p>
+                                             <p>Stock Left : ${product.stock}</p>
+                                             <div class="flex justify-center mt-8"> <img src="${product.images[0]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[1]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[2]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[3]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"></div>
+                                          </div>
+                                         
+                                      </div>
+                                       
+                                  </div>
+                                  <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
+                              </div> 
+                            </div>`;
+      womenBagList.appendChild(listItem2);
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+
+   const apiUrl3 = "https://dummyjson.com/products/category/womens-jewellery"; // Replace with your actual API URL
+fetch(apiUrl3)
+  .then((response) => response.json())
+  .then((data) => {
+    const productData = data.products;
+    console.log(productData);
+    productData.forEach((product) => {
+      console.log(product);
+      const listItem3 = document.createElement("li");
+      listItem3.innerHTML = `<div class="uk-panel">
+                              <div class="p-4">
+                                  <div class="relative image-container h-80 rounded-lg transition-all duration-500 hover:scale-105">
+                                      <img src="${product.thumbnail}" alt="Image 1" class="w-full h-auto">
+
+                                      <div class="overlay">
+                                          <div class="overlay-content">
+                                             
+                                              <div>
+                                                <button class="w-full toCart">Add To Cart</button>
+                                               </div>
+                                          </div>
+                              
+                                      </div>
+                                      <div class="overlay1">
+                                          <div class="overlay-content1">
+                                             <h1 class=" my-1 font-semibold">$${product.price}</h1>
+                                          </div>
+                                         
+                                      </div>
+                                      <div class="overlay2 p-4">
+                                          <div class="overlay-content2 text-left">
+                                             <p class="mt-5 text-md">${product.description.slice(0, 90)}</p>
+                                             <p>Stock Left : ${product.stock}</p>
+                                             <div class="flex justify-center mt-8"> <img src="${product.images[0]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[1]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[2]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"><img src="${product.images[3]}" alt="Image 1" class="w-14 h-14 rounded-sm mx-2"></div>
+                                          </div>
+                                         
+                                      </div>
+                                       
+                                  </div>
+                                  <h4 class="uppercase text-center text-xl font-semibold mt-2" style="color: black;">${product.title}</h4>
+                              </div> 
+                            </div>`;
+      womensJwellery.appendChild(listItem3);
     });
   })
   .catch((error) => {
