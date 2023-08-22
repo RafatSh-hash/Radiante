@@ -267,8 +267,8 @@ applyButton.addEventListener("click", function () {
   const discountInput = document.getElementById("disCountInput");
   const discountInputValue = discountInput.value.toUpperCase();
 
-  if (!(discountInputValue === "SELL200")) {
-    window.alert("Please enter 'SELL200' for the discount");
+  if (!(discountInputValue === "SELL800")) {
+    window.alert("Please enter 'SELL800' for the discount");
   } else {
     const discount = totalPrice * 0.2;
     const finalTotal = totalPrice - discount;

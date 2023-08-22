@@ -1,7 +1,7 @@
 
-# Summer Sell
+# Radiante
 
-- Summer Sell in a simple market place. It contains following features:
+- Radiante in a simple market place. It contains following features:
 
 
 
@@ -13,7 +13,7 @@
 
 ## Tech Stack
 
- HTML, CSS, TailwindCSS, JavaScript
+ HTML, CSS, TailwindCSS, UIKit, JavaScript, RestAPI
 
 
 
@@ -21,9 +21,9 @@
 ## Features
 
 
-- User selects the products as per his liking my clicking on the product card.
+- User selects the products as per his liking my clicking on the "Add To Cart" button.
 - The product name is added on the cart and total price is added below.
-- User can apply coupon "SELL200" for 20% off.
+- User can apply coupon "SELL800" for 20% off.
 - The apply button is disabled until the total price is above 200TK.
 - The Purchase button is disabled until the user adds product to the cart.
 - Apply button resets the coupon field after break animation.
